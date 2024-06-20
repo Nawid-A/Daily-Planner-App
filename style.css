@@ -1,98 +1,320 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins"); 
- 
- html{ 
-    font-family: 'Poppins', sans-serif;   
-} 
- 
-#container{ 
-    display:flex; 
-    flex-direction:column; 
-    gap: 80px; 
-    padding: 8px; 
-    height: 200vh;   
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;  /* Ensures that the html and body tags take full viewport height */
+    width: 100%;  /* Ensures that the html and body tags take full viewport width */
+    display: flex;
+    flex-direction: column;
+    text-rendering: optimizeLegibility;
 }
- 
-.card{ 
-    display:flex; 
-    flex-direction: column; 
-    width: 80%; 
-    align-items: center; 
-    justify-content: space-between; 
-    height: 300px; 
-    border: 1px solid; 
-    border-radius: 8px; 
-    padding:15px; 
-    background: linear-gradient(180deg, #182844,#A96436,#d3ca66);  
-    color: #fff;
-} 
-.transportation, .content-boxes{ 
-    display:flex; 
-    justify-content: space-between; 
-    width:90%; 
-    padding: 5px;  
-    gap:10px;
+
+.portion {
+    align-items: center;  /* Centers the content horizontally */
+    width: 100%;
+    height: 100vh;  /* Takes full viewport height */ 
+    margin-bottom: 12px;
 }  
+#po1{ 
+    display: flex;
+    flex-direction: column; 
+    background: url(backgrounds/test.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
 #taskbar{ 
     position: sticky;  
     top: 0;
     width:100%; 
     display: flex; 
-    justify-content: space-between; 
+    justify-content: flex-end; 
     padding: 10px 20px; 
-    background: linear-gradient(midnightblue,#5b548a); 
-    border-radius: 8px;
-} 
+}  
+
 ul{ 
     list-style-type: none; 
     display: flex; 
+    gap: 25px; 
+} 
+
+.links {
+    list-style-type: none;
     gap: 25px;
-} 
-#card-holder{ 
-    display:flex; 
-    justify-content: center; 
-    
-} 
-.box{ 
-    border: 1.5px solid; 
-    border-radius: 6px;   
-    text-align: center; 
-    transition: transform 0.3s ease;
-} 
-.c{ 
-    height: 170px; 
-    width: 30%;
-}  
-.t{ 
-    height:30px; 
-    width: 30%;
-} 
-#weather{ 
-    background: linear-gradient(135deg,#00feba,#5b548a);  
-    opacity: 80%; 
-    color: #fff; 
-    display: flex;  
-    padding:8px;
-    flex-direction: column;  
-    justify-content:space-a
-    
-} 
-.icont{ 
-width: 100%; 
-height: 50%; 
-display: flex; 
-justify-content: center;  
-align-items:center;
-} 
-
-#weather img{ 
-    height: 80px;  
-    color: #fff;
-
-} 
-.title{ 
-    font-weight: 800; 
-    font-size: 30px
-} 
-.box:hover{ 
-transform:scale(105%)
+    padding-right: 20px;  /* Removes default padding */
+    margin: 0;  /* Ensures there is no default margin */ 
 }
+
+#titletext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;  /* Adjusts the space from the top or from the taskbar */
+}
+
+#titletext h1 {
+    font-weight: 800;
+    font-size: 60px;
+    color: #39485A;
+    margin: 0;  /* Removes default margin */
+}
+
+#titletext p {
+    font-size: 14px;
+    margin: 10px 0 0;  /* Adjusts top margin to bring subtext closer to the title */
+}  
+
+#po2 {
+    display: flex;
+    padding: 10px; /* Provides some padding around the contents */   
+    background-size: cover; 
+    background-image:url(backgrounds/transbackground.png);
+}
+
+.slanted-div {
+    height: 100%; 
+    position: relative;
+    overflow: hidden;
+} 
+
+.left-div { 
+    width:30%;
+}
+
+.right-div { 
+    border-radius: 12px;
+    width: 70%; 
+    display: flex; 
+    justify-content: flex-end;
+    background-color: rgb(0 0 0 / 80%);
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+    color: white; 
+    padding-top: 20px;
+} 
+ 
+#trans-data{ 
+    display:flex;  
+    padding: 10px;
+    flex-direction:column; 
+    align-items: center;  
+} 
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none; 
+    width:200px;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  } 
+
+  .times{ 
+    margin-top: 20px;
+    width: 600px;
+    height: 300px;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+  } 
+  .sub{ 
+    justify-content: center;
+    display: flex;
+    font-weight: 800;
+    font-style: italic;
+    width: 33%;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    margin-right: -5%;
+    font-size: 40px; 
+    transition: all 0.3s ease;
+  }    
+   
+  .sub-text-h{ 
+    font-size: 40px; 
+    font-weight: 800;
+    font-style: italic; 
+    align-items: center; 
+    transform: translateX(25%);
+  } 
+  .sub-text-m{ 
+    font-size: 37px; 
+    font-weight: 800;
+    font-style: italic;
+  }  
+
+  .sub-text-l{  
+    transform: translateX(-20px);
+    font-size: 20px; 
+    font-weight: 700;
+    font-style: italic;
+  } 
+
+  .data-box{ 
+    display:flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between;
+  } 
+
+  .upper{ 
+    flex-direction: column;
+    display: flex;
+    height: 60%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sub:hover, .objective-box li:hover, .weekly-list div:hover{ 
+    transform: scale(1.1); 
+  }
+  .ttc{ 
+    background-color: crimson;
+  }
+  .GO{ 
+    background-color:#04AA6D
+  }  
+  #po3{ 
+    display: flex;  
+    flex-direction: column; 
+    gap: 30px; 
+    padding: 50px;
+    background-image: url(backgrounds/tri_background\ \(1\).svg); 
+    background-size: cover;
+  } 
+  .top{  
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+    width: 80%;
+    flex-basis: 60%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .objective-box, .weekly-list div{ 
+    display: flex;  
+    flex-direction: column; 
+    align-items: center; 
+    padding: 15px; 
+    background-color: #3e6181ff;
+    border-radius: 15%;
+  }  
+
+  .objective-box ul{ 
+    padding: 10px;
+    flex-direction: column;
+  } 
+  .objective-box li{ 
+    background-color: #cfe2f3ff;
+    border-radius: 12px;
+    padding: 10px;
+    color: #3e6181;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .weekly-list{  
+    min-width: 80%; 
+    background-color: #1e252cff; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: -7px 5px 6px 0 rgba(0, 0, 0, 0.4);
+  } 
+  .weekly-list div{ 
+    border: 2px solid #b7b7b7;
+    height: 120px;
+    width: 90px;
+    background: none;
+    transition: all 0.3s ease;
+  }
+
+  .day{ 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #efefef;
+  }  
+
+
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+@keyframes flyRightToLeftAndFlap {
+    0% {
+        transform: translateX(100vw) rotate(0deg); /* Start from the right, not rotated */
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(50vw) rotate(10deg); /* Midway, rotate slightly */
+    }
+    100% {
+        transform: translateX(-100vw) rotate(0deg); /* End to the left, return to original rotation */
+        opacity: 0;
+    }
+}
+
+@keyframes flyLeftToRightAndFlap {
+    0% {
+        transform: translateX(-100vw) rotate(0deg); /* Start from the left, not rotated */
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50vw) rotate(10deg); /* Midway, rotate slightly */
+    }
+    100% {
+        transform: translateX(100vw) rotate(0deg); /* End to the right, return to original rotation */
+        opacity: 0;
+    }
+}
+
+#bird {
+    width: 50px; /* Adjust size as necessary */
+    height: auto;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    will-change: transform, opacity; /* Optimize for animations */
+}
+
+#bird-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Ensure elements outside this container are not visible */
+}
+
+
+

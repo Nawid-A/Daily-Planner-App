@@ -1,68 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Impact&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
-    <link rel="stylesheet" href="style.css"> 
-    <style> 
-    :root{ 
-        --current-weather-image:"./icons/weathers/static/snowy-5.svg"; 
-        --current-weather-image:"./icons/weathers/animated/snowy-5.svg"; 
-    }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">  
 </head>
-<body> 
-    <div id="container">  
-        <div id="taskbar"> 
-            <div class="icon"><img src="./icons/"> </div> 
-            <div class="links"> 
-                <ul> 
-                    <li>Calendar</li> 
-                    <li>Courses & Texts</li> 
-                    <li>Study Bops</li>
-                </ul>
-            </div> 
-
+<body>  
+    <div class="portion" id="po1">
+        <div id="taskbar">  
+            <div class="links">
+            <ul> 
+                <li>Calendar</li> 
+                <li>Courses & Texts</li> 
+                <li>Study Bops</li>
+            </ul>  
+            </div>
+        </div>     
+        <div id="titletext">
+            <h1>Welcome</h1>  
+            <p id="alterquote">Lets get down to business</p> 
         </div> 
-        <div id="card-holder">
-        <div class="card 1">  
-            <div class="title"><placeholder id="title1"> Good Morning </placeholder> </div>
-            <div class="subtext"> <placeholder id="date">Thursday</placeholder> </div>
-            <div class="content-boxes">  
-                <div id="outfit" class="box c"> jeans </div> 
-                <div id="weather" class="box c">  
-                    <div class="icont"><img id="weather-icon" src="./icons/weathers/static/rainy-5.svg" onmouseover="hover(this)" onmouseout="unhover(this)"></div>  
-                    <span id="temperature">22</span>  
-                    <div id="low"> 
-                        <span id="humidity">9</span>     
-                        <span id="wind">15</span>
+        <div id="bird-container">
+            <img src="icons/nature/bird.svg" id="bird" alt="Flying Bird">
+        </div>
+    </div> 
+    <div class="portion" id="po2">  
+        <div class="slanted-div left-div" id="trans-icons">   
+        </div> 
+        <div class="slanted-div right-div">  
+            <div id="trans-data">
+            <div style="font-size:40px; font-weight:800;">Transit Data</div> 
+            <div>Select the bus </div>  
+            <div class="dropdown">
+                <button class="dropbtn">My Locations</button>
+                <div class="dropdown-content">
+                  <a href="#">Morningside and Kingston-West</a>
+                  <a href="#">Old Kingston road-West</a>
+                  <a href="#">Kennedy Station-East</a> 
+                  <a href="#">Campus-East</a>
+                </div>
+              </div> 
+            <div class="times"> 
+                <div class="sub ttc" id="ttc1"> 
+                    <div class="data-box">  
+                        <div class="upper">
+                        <div class="sub-text-h"> 86 </div> 
+                        <span class="sub-text-m"> 3 min</span>  
+                    </div> 
+                    <div class="lower">
+                        <p class="sub-text-l"> Next: 6 min</p> 
+                    </div>
                     </div> 
                 </div> 
-
-                <div id="ttc-updates"class="box c"> Nothing to report so far </div>
-            </div> 
-            <div class="transportation"> 
-                <div id="986" class="box t"> 
-                    <div class="icon"></div> 
-                    <div class="arrival">986 - <span id="986time"></span></div>
+                <div class="sub ttc" id="ttc2">  
+                    <div class="data-box">  
+                        <div class="upper">
+                        <div class="sub-text-h"> 905 </div> 
+                        <span class="sub-text-m"> 3 min</span>  
+                    </div> 
+                    <div class="lower">
+                        <p class="sub-text-l"> Next: 6 min</p> 
+                    </div>
+                    </div> 
                 </div> 
-                <div id="86" class="box t"> 
-                    <div class="icon"></div> 
-                    <div class="arrival">86 - <span id="86time"></span></div>
-                </div> 
-                <div id="LE" class="box t"> 
-                    <div class="icon"></div> 
-                    <div class="arrival">LE - <span id="LEtime"></span></div>
+                <div class="sub GO" id="go">  
+                    <div class="data-box">  
+                        <div class="upper">
+                        <div class="sub-text-h"> LE </div> 
+                        <span class="sub-text-m"> 3 min</span>  
+                    </div> 
+                    <div class="lower">
+                        <p class="sub-text-l"> Next: 6 min</p> 
+                    </div>
+                    </div> 
                 </div>
             </div>
+        </div>
+        </div>
+    </div>    
+    <div class="portion" id="po3">   
+        
+        <div class="top">  
+            <div class="obj-text"> 
+                <h1 style="font-family:'Anton', sans-serif; color: #f3f3f3; font-size: 40px; letter-spacing: 1px;">Objectives and Goals</h1> 
+                <h5 style="font-family: 'Lexend', serif; color:#f3f3f3; font-size: 13px;">Accomplish goals today to pave a better path for tomorrow!</h5>
+            </div>
+        <div class="objective-box">  
+            <h2 style="font-family:'Lexend', sans-serif; font-weight: 700; font-size: 24px; color:#efefef;"> Current Goals </h2>
+            <ul> 
+                <li> Do 5 leetcode problems </li> 
+                <li> Study chapter 5 slides for CPS688</li> 
+                <li> Meal prep for the week</li>
+            </ul>
+        </div>  
+    </div>
+        <div class="weekly-list"> 
+                <div class="day"> Monday </div> 
+                <div class="day"> Tuesday</div>
+                <div class="day"> Wednesday </div>
+                <div class="day"> Thursday </div>
+                <div class="day"> Friday </div> 
+                <div class="day"> Saturday </div>
+                <div class="day"> Sunday</div> 
+        </div>
+    </div>
 
-        </div> 
-    </div>
-    </div>
-<script src="script.js"> 
- 
- </script>  
-    
+    <script src="script.js"></script>     
 </body>
 </html>
