@@ -1,3 +1,50 @@
+
+document.addEventListener('DOMContentLoaded', function() {
+    const apiKey = 'a311661b167f931c73592c67542d4efb';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=${apiKey}&units=metric`;
+
+    "https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=a311661b167f931c73592c67542d4efb&units=metric"
+
+    fetch(url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);  // Check the full structure in console
+        document.getElementById('temp').innerHTML = Math.round(data.main.temp);
+        document.getElementById('precip').innerHTML = data.rain ? data.rain['1h'] : 0;
+        const sunset= data.sys.sunset;
+        const sunsetTime= new Date(sunset*1000);
+        const currentTime= new Date();
+        let iconTime="day";
+
+        if(currentTime>sunsetTime){
+            iconTime="night";
+        }
+
+        // Set weather icon
+        const desc = data.weather[0].main;
+        const iconUrl = `icons/weathers/static/${desc}.svg`;
+        document.getElementById('dynamicImage').src = iconUrl;
+    })
+    .catch(error => {
+        console.error('Error fetching data: ', error);
+    });
+});
+
+function switchtoAnimated(){
+    const name=document.getElementById('dynamicImage').src.split("/").pop().split(".")[0];
+    document.getElementById('dynamicImage').src= "icons/weathers/animated/"+name+".svg";
+}
+
+function switchtoStatic(){
+    const name=document.getElementById('dynamicImage').src.split("/").pop().split(".")[0];
+    document.getElementById('dynamicImage').src= "icons/weathers/static/"+name+".svg";
+}
+
 /*let bird = document.getElementById('bird');
 let flyRight = true;
 
