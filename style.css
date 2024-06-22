@@ -272,21 +272,52 @@ ul{
     min-height: 200px;
   }
 
-.card{
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  border: solid 2px #d9d9d9;
-  border-radius: 11px;
-  align-items: center;
-  min-width: 30%;
-  transition: all 0.3s ease;
-  justify-content: space-evenly;
-}
+  .card{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px #d9d9d9;
+    border-radius: 11px;
+    align-items: center;
+    min-width: 30%;
+    transition: all 0.3s ease;
+    justify-content: space-evenly;
+  }
+  
+  #precip-box, #wind-box {
+    display: flex; /* Aligns children (img and span) in a row */
+    align-items: center; /* Centers children vertically */
+    width: 40%; /* Sets the width to 40% of its parent container, the .card */
+    justify-content: flex-start; /* Aligns children to the start of the flex container */
+    gap:5px;
+  }
+  
+  .icon img{
+    width:90%;
+    height:90%;
+    object-fit: contain;
+  }
 
-#weather img{
-  transition: opacity 0.3s;
-}
+  .icon{
+    height:100%;
+    width:40%;
+  }
+
+  #windprecip{
+    height:10%;
+    width:90%;
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #precip-box span {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #efefef;
+    font-weight: 500;
+  }
   
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: #ddd;}

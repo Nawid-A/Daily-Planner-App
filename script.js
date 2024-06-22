@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const apiKey = 'a311661b167f931c73592c67542d4efb';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=${apiKey}&units=metric`;
 
-    "https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=a311661b167f931c73592c67542d4efb&units=metric"
+    const currentTime= new Date();
+    let gotime= this.getElementById('LE-time').textContent;
+    //Add Go train time logic tomorrow
 
     fetch(url)
     .then(response => {
@@ -15,10 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
         console.log(data);  // Check the full structure in console
         document.getElementById('temp').innerHTML = Math.round(data.main.temp);
-        document.getElementById('precip').innerHTML = data.rain ? data.rain['1h'] : 0;
+        document.getElementById('precip').innerHTML = data.rain ? data.rain['1h']*100 : 0;
         const sunset= data.sys.sunset;
         const sunsetTime= new Date(sunset*1000);
-        const currentTime= new Date();
         let iconTime="day";
 
         if(currentTime>sunsetTime){
